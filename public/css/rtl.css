@@ -1,0 +1,15 @@
+body {
+	font-family: 'Tajawal', 'sans-serif' !important;
+}
+.paper .list-group-item, input, select, textarea, .contact-information, .planType {
+	direction: rtl !important;
+}
+.text-left, .contact-information {
+	text-align: right !important;
+}
+.text-left {
+	text-align: right !important;
+}
+.expandBlock {
+	direction: rtl;
+}

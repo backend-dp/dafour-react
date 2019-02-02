@@ -1,0 +1,647 @@
+#loadContainer {
+    display: none;
+}
+
+#loader {
+    position: absolute;
+    z-index: 1;
+    width: 100px;
+    height: 100px;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    margin: auto;
+
+}
+
+html, body {
+    height: 100%;
+    font-family: 'Roboto', 'Tajawal', sans-serif !important;
+}
+
+.modal-header {
+    background: #e4e4e4;
+}
+
+.modal-content img {
+    height: 75px;
+    margin: auto;
+}
+
+.modal-content p {
+    color: #7f7f7f;
+}
+
+.modal-content a {
+    text-decoration: none;
+}
+
+.modal-content button {
+    background-color: #3498db;
+    color: #fff;
+    border-radius: 50px;
+}
+
+.hover-img {
+    display: none;
+}
+
+.modal-content a:hover .default-img, .modal-content a:focus .default-img {
+    display: none;
+}
+
+.modal-content a:hover .hover-img, .modal-content a:focus .hover-img {
+    display: block;
+}
+
+.modal-content a:hover p, .modal-content h3 {
+    color: #3498db;
+}
+
+.modal-content a:focus p {
+    color: #3498db;
+}
+
+.modal-content form {
+    direction: rtl;
+}
+
+.modal-content input {
+    direction: rtl;
+    background-color: #3498db;
+    color: #FFF;
+    border: 0;
+    border-radius: 50px;
+}
+
+.modal-content input::-webkit-input-placeholder { /* Chrome/Opera/Safari */
+    font-size: 20px;
+    font-weight: bold;
+    font-style: normal;
+    font-stretch: normal;
+    line-height: normal;
+    letter-spacing: normal;
+    color: #fff;
+}
+
+.modal-content input::-moz-placeholder { /* Firefox 19+ */
+    color: pink;
+    font-size: 20px;
+    font-weight: bold;
+    font-style: normal;
+    font-stretch: normal;
+    line-height: normal;
+    letter-spacing: normal;
+    color: #fff;
+}
+
+.modal-content input:-ms-input-placeholder { /* IE 10+ */
+    color: pink;
+    font-size: 20px;
+    font-weight: bold;
+    font-style: normal;
+    font-stretch: normal;
+    line-height: normal;
+    letter-spacing: normal;
+    color: #fff;
+}
+
+.modal-content input:-moz-placeholder { /* Firefox 18- */
+    color: pink;
+    font-size: 20px;
+    font-weight: bold;
+    font-style: normal;
+    font-stretch: normal;
+    line-height: normal;
+    letter-spacing: normal;
+    color: #fff;
+}
+
+.paymentStep2, .bankAccounts {
+    display: none;
+}
+
+@media (max-width: 1224px) {
+    .slideshow .search {
+        width: 80% !important;
+    }
+}
+
+@media (max-width: 1199px) {
+    .menu-span {
+        display: block !important;
+    }
+}
+
+@media (max-width: 768px) {
+    .login .d-inline.float-left, .login .d-inline.float-right {
+        width: 100%;
+        float: none !important;
+        text-align: center !important;
+        display: block !important;
+    }
+
+    .slideshow .search {
+        top: 100px !important;
+        height: 470px !important;
+        padding: 20px !important;
+    }
+
+    .login .search {
+        height: 100% !important;
+    }
+
+    .search input, .search select {
+        height: 50px !important;
+        padding: 10px !important;
+    }
+
+    .search .row.m-0.py-3 {
+        padding: 10px 0 !important;
+    }
+
+    .search select {
+        margin-bottom: 10px !important;
+    }
+
+    .active-plan {
+        /*        transform: scale(1) !important;*/
+    }
+
+    .list-items, .list-items li {
+        display: block !important;
+
+    }
+
+    .contact-information {
+        font-size: 16px !important;
+    }
+
+    .navbar-collapse {
+        position: absolute;
+        top: 120px;
+        background: #00aae2;
+        width: 100%;
+        left: 0;
+        right: 0;
+        padding: 15px;
+    }
+
+    .contact li {
+        padding: 0 !important;
+    }
+
+    .w90 {
+        width: 95% !important;
+    }
+}
+
+.w90 {
+    width: 85%;
+    margin: auto;
+}
+
+.sticky {
+    position: fixed !important;
+    top: 0;
+    background-color: #fff;
+    box-shadow: 0px 0px 10px #CCC;
+}
+
+.header.sticky .navigation a {
+    color: #000 !important;
+}
+
+.sticky .logo {
+    box-shadow: none !important;
+}
+
+.header .lang {
+    color: #fec310 !important;
+}
+
+.header a {
+    color: #FFF !important;
+}
+
+.header {
+    height: 120px;
+    transition-duration: .3s;
+    transition-timing-function: ease-out;
+    z-index: 100;
+    margin-top: 1px
+}
+
+.header nav {
+    height: 120px;
+    font-size: medium;
+    font-weight: bold;
+    font-style: normal;
+    font-stretch: normal;
+}
+
+.header .w90 {
+    width: 95% !important;
+}
+
+.btn-login {
+    mix-blend-mode: undefined;
+    border-radius: 25px;
+    background-color: #3498db;
+    box-shadow: 0px 1px 3.3px -0.2px rgba(0, 0, 0, 0.25);
+}
+
+.logo {
+    width: 165px;
+    height: 120px;
+    top: 0;
+    position: absolute;
+    mix-blend-mode: undefined;
+    background-color: #ffffff;
+    left: 0;
+    right: 0;
+    margin: auto;
+    border-bottom-left-radius: 165px;
+    border-bottom-right-radius: 165px;
+    box-shadow: 0px 1px 3.3px -0.2px rgba(0, 0, 0, 0.25);
+}
+
+.logo img {
+    height: 70px;
+}
+
+.slideshow {
+    z-index: 1;
+    height: 100%;
+    overflow: hidden
+}
+
+.slideshow .search {
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    width: 60%;
+    left: 0;
+    height: 400px;
+    top: 0;
+    margin: auto;
+    background: rgba(0, 0, 0, 0.61);
+    z-index: 10;
+    color: #fff;
+    text-align: center;
+    mix-blend-mode: undefined;
+    border-radius: 20px;
+    box-shadow: 0px 1px 3.3px -0.2px rgba(0, 0, 0, 0.25);
+}
+
+.search input, .search select {
+    height: 50px;
+    mix-blend-mode: undefined;
+    border-radius: 0;
+    background-color: #fcfcfc;
+    border: none;
+    width: 100%;
+}
+
+.search .btn {
+    width: 120px;
+    height: 65px;
+    mix-blend-mode: undefined;
+    border-radius: 32.5px;
+    background-color: #fec310;
+    color: #FFF;
+    box-shadow: 0px 1px 3.3px -0.2px rgba(0, 0, 0, 0.25);
+}
+
+.about h1, .cmc-project h1, .services h1, .contact h1, .careers h1, .news h1 {
+    font-size: 30px;
+    font-weight: bold;
+    font-style: normal;
+    font-stretch: normal;
+    line-height: normal;
+    letter-spacing: normal;
+    color: #00aae2;
+}
+
+.services .service-br {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 350px;
+}
+
+.paper {
+    border-radius: 20px;
+    background-color: #ffffff;
+    box-shadow: 0px 1px 3.3px -0.2px rgba(0, 0, 0, 0.25);
+}
+
+.paper .list-group-item {
+    border: 1px solid #c8e9ff;
+    border-left: 0;
+    border-radius: 0;
+    border-right: 0;
+}
+
+.paper .btn {
+    background-image: linear-gradient(to top, #3278a7, #3498db);
+    border-bottom-left-radius: 20px;
+    border-bottom-right-radius: 20px;
+    border-top-left-radius: 0;
+    border-top-right-radius: 0;
+    color: #FFF;
+}
+
+.list-items {
+    display: inline-block;
+    border-radius: 45.5px;
+    background-color: #cee7f7;
+    color: #3498db;
+}
+
+.list-items li {
+    cursor: pointer;
+}
+
+.list-items-active {
+    mix-blend-mode: undefined;
+    border-radius: 45.5px;
+    background-color: #3498db;
+    color: #FFF !important;
+}
+
+.card-plan {
+    mix-blend-mode: undefined;
+    border-radius: 20px;
+    background-color: #ffffff;
+    box-shadow: 0px 1px 3.3px -0.2px rgba(0, 0, 0, 0.25);
+}
+
+.card-plan .btn {
+    height: 60px;
+    line-height: 50px;
+    mix-blend-mode: undefined;
+    background-color: #e4e4e4;
+    border-radius: 0;
+    border-bottom-left-radius: 15px;
+    border-bottom-right-radius: 15px;
+    border: 0;
+    color: #3498db;
+}
+
+.active-plan {
+    background-color: #ffffff;
+    border: solid 5px #3498db;
+    transform: scale(1.1);
+}
+
+.active-plan .btn {
+    color: #fff;
+    background-color: #3498db;
+}
+
+.contact {
+    background: url(../images/img-foo.jpg);
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
+.contact h1 {
+    color: #fff;
+}
+
+.contact input {
+    height: 65px;
+    mix-blend-mode: undefined;
+    border-radius: 39px;
+    border: none;
+}
+
+.contact textarea {
+    border-radius: 39px;
+    border: none;
+}
+
+.contact button {
+    color: #FFF;
+    border: none;
+    width: 120px;
+    height: 65px;
+    mix-blend-mode: undefined;
+    border-radius: 32.5px;
+    background-color: #fec310;
+    box-shadow: 0px 1px 3.3px -0.2px rgba(0, 0, 0, 0.25);
+}
+
+.contact-input::-webkit-input-placeholder { /* Chrome/Opera/Safari */
+    mix-blend-mode: undefined;
+    font-size: 20px;
+    font-weight: bold;
+    font-style: normal;
+    font-stretch: normal;
+    line-height: normal;
+    letter-spacing: normal;
+    color: #00aae2;
+}
+
+.contact-input::-moz-placeholder { /* Firefox 19+ */
+    color: pink;
+    mix-blend-mode: undefined;
+    font-size: 20px;
+    font-weight: bold;
+    font-style: normal;
+    font-stretch: normal;
+    line-height: normal;
+    letter-spacing: normal;
+    color: #00aae2;
+}
+
+.contact-input:-ms-input-placeholder { /* IE 10+ */
+    color: pink;
+    mix-blend-mode: undefined;
+    font-size: 20px;
+    font-weight: bold;
+    font-style: normal;
+    font-stretch: normal;
+    line-height: normal;
+    letter-spacing: normal;
+    color: #00aae2;
+}
+
+.contact-input:-moz-placeholder { /* Firefox 18- */
+    color: pink;
+    mix-blend-mode: undefined;
+    font-size: 20px;
+    font-weight: bold;
+    font-style: normal;
+    font-stretch: normal;
+    line-height: normal;
+    letter-spacing: normal;
+    color: #00aae2;
+}
+
+.contact-information {
+    mix-blend-mode: undefined;
+    font-size: 24px;
+    font-weight: bold;
+    font-style: normal;
+    font-stretch: normal;
+    line-height: normal;
+    letter-spacing: normal;
+    color: #fff !important;
+}
+
+.login .slideshow {
+    overflow: visible;
+}
+
+.login .search {
+    position: relative;
+    height: 100%;
+    top: 140px;
+
+}
+
+.pages .navigation li a {
+    color: #000 !important;
+}
+
+.pages label {
+    font-weight: 500;
+    font-style: normal;
+    letter-spacing: 0.2px;
+    color: #3498db;
+}
+
+.pages input, .pages select, .pages textarea {
+    mix-blend-mode: undefined;
+    background-color: #cee7f7;
+    border: solid 3px #3498db;
+}
+
+.pages .btn-login {
+    border-radius: 32.5px;
+    margin: auto;
+    font-weight: bolder;
+    border: none;
+    color: #FFF;
+    background-color: #fec310;
+    box-shadow: 0px 1px 3.3px -0.2px rgba(0, 0, 0, 0.25);
+
+}
+
+.accSetting, .universityEducation, .vocationalEducation, .Mydocs {
+    display: none;
+}
+
+.title404 {
+    font-size: 6em !important;
+}
+
+.pages strong {
+    color: #416d8c;
+    font-size: 2em !important;
+}
+
+.pages .img404 {
+    height: 200px;
+}
+
+/* The side navigation menu */
+.sidenav {
+    height: 100%; /* 100% Full-height */
+    width: 0; /* 0 width - change this with JavaScript */
+    position: fixed; /* Stay in place */
+    z-index: 2; /* Stay on top */
+    top: 0; /* Stay at the top */
+    left: 0;
+    right: 0;
+    margin: auto;
+    background-color: #111; /* Black*/
+    overflow-x: hidden; /* Disable horizontal scroll */
+    padding-top: 60px; /* Place content 60px from the top */
+    transition: 0.1s; /* 0.5 second transition effect to slide in the sidenav */
+}
+
+/* The navigation menu links */
+.sidenav a {
+    padding: 8px 8px 8px 32px;
+    text-decoration: none;
+    font-size: medium;
+    color: #fff !important;
+    display: block;
+    transition: 0.3s;
+}
+
+.header.sticky .sidenav .navigation a {
+    color: #FFF !important;
+}
+
+.sidenav .btn-login {
+    width: 130px;
+    margin: auto;
+}
+
+/* When you mouse over the navigation links, change their color */
+.sidenav a:hover {
+    color: #f1f1f1;
+}
+
+/* Position and style the close button (top right corner) */
+.sidenav .closebtn {
+    position: absolute;
+    top: 0;
+    right: 25px;
+    font-size: 36px;
+    margin-left: 50px;
+}
+
+/* On smaller screens, where height is less than 450px, change the style of the sidenav (less padding and a smaller font size) */
+@media screen and (max-height: 450px) {
+    .sidenav {
+        padding-top: 15px;
+    }
+}
+
+.menu-span {
+    left: 10%;
+    top: 45px;
+    z-index: 1;
+    display: none;
+}
+
+.menu-icon {
+    height: 30px;
+}
+
+.modal-footer img {
+    height: 30px;
+}
+
+.profileImg, .profile-img-container {
+    width: 254px;
+    height: 254px;
+    cursor: pointer;
+    overflow: hidden;
+}
+
+.profile-img-container .clearfix {
+    margin-top: -23px;
+    background: rgba(0, 0, 0, 0.66);
+    color: #FFF;
+}
+
+.profile-item .profileImg, .profile-item .profile-img-container {
+    height: 50px;
+    width: 50px;
+}
+.navbar-nav .profile-item-txt, .login-alert {
+    color: #3498db !important;
+}
+.login-alert {
+    top: 140px;
+    left: 0;
+    right: 0;
+}
