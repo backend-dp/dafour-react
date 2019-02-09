@@ -1,11 +1,76 @@
 import React, { Component } from 'react';
 import Header from '../home/Header';
-
+import Axios from "axios";
+import {Link} from "react-router-dom";
 
 
 class SignUp extends Component {
+    constructor(props){
+        super(props);
+        
+        this.state={
+    
+            firstName:'',
+            middleName:'',
+            lastName:'',
+            degree:'',
+            email:'',
+            phone:'',
+            password:'',
+            confirmPassword:'',
+          
+        };
+        
+    }
+
+    onChange = (name ,e) => {
+        this.setState({
+
+            [name]: e.target.value
+        });
+        console.log(this.state);
+    }
+
+    studentSubmit = (e) => {
+
+        e.preventDefault();
+        // const username = this.state.username 
+        // const password = this.state.password
+        const inputs = {
+            firstName: this.state.firstName,
+            middleName: this.state.middleName,
+            lastName: this.state.lastName,
+            degree: this.state.degree,
+            email: this.state.email,
+            phone: this.state.phone,
+            password: this.state.password,
+            confirmPassword: this.state.confirmPassword,
+        }
+        const url = "/api/s/register";
+        
+        Axios.post( url ,  {data :{inputs}} )
+        .then(res => {
+            
+            console.log(res);
+        })
+        .catch(() => console.log("Can’t access " + url + " response. Blocked by browser?"))     
+        
+        
+        
+    }
+    proSubmit = () => {
+        
+    }
   
   render(){
+      const firstName = this.state.firstName
+      const middleName = this.state.middleName
+      const lastName = this.state.lastName
+      const degree = this.state.degree
+      const email = this.state.email
+      const phone = this.state.phone
+      const password = this.state.password
+      const confirmPassword = this.state.confirmPassword
     return(
 
     <div>
@@ -27,8 +92,12 @@ class SignUp extends Component {
                             </ul>
                         </div>
                     </div>
+
                     <div id="planTabs">
+                    {/* professional */}
+
                         <div className="row m-0 planType">
+
                             <form className="row m-0">
                                 <p className="lead col-12 text-center">Professional Sign Up</p>
                                 <div className="file-field col-12">
@@ -43,32 +112,32 @@ class SignUp extends Component {
                                     <input className="d-none" id="imgUpload" type="file" />
                                 </div>
                                 <div className="col-sm-4 mt-3">
-                                    <input className="input-group p-3" type="text" placeholder="First Name" />
+                                    <input className="input-group p-3" type="text" placeholder="First Name" value={firstName} onChange={this.onChange} />
                                 </div>
                                 <div className="col-sm-4 mt-3">
-                                    <input className="input-group p-3" type="text" placeholder="Middle Name" />
+                                    <input className="input-group p-3" type="text" placeholder="Middle Name" value={middleName} onChange={this.onChange} />
                                 </div>
                                 <div className="col-sm-4 mt-3">
-                                    <input className="input-group p-3" type="text" placeholder="Last Name" />
+                                    <input className="input-group p-3" type="text" placeholder="Last Name" value={lastName} onChange={this.onChange} />
                                 </div>
                                 <div className="col-12 mt-3">
-                                    <input className="input-group p-3" type="text" placeholder="Degree" />
+                                    <input className="input-group p-3" type="text" placeholder="Degree" value={degree} onChange={this.onChange} />
                                 </div>
                                 <div className="col-12 mt-3">
-                                    <input className="input-group p-3" type="email" placeholder="You Email" />
+                                    <input className="input-group p-3" type="email" placeholder="You Email" value={email} onChange={this.onChange} />
                                 </div>
                                 <div className="col-12 mt-3">
-                                    <input className="input-group p-3" type="password" placeholder="Your Password" />
+                                    <input className="input-group p-3" type="tel" placeholder="Your Phone Number" value={phone} onChange={this.onChange} />
                                 </div>
                                 <div className="col-12 mt-3">
-                                    <input className="input-group p-3" type="password" placeholder="Confirm Password" />
+                                    <input className="input-group p-3" type="password" placeholder="Your Password" value={password} onChange={this.onChange} />
                                 </div>
                                 <div className="col-12 mt-3">
-                                    <input className="input-group p-3" type="tel" placeholder="Your Phone Number" />
+                                    <input className="input-group p-3" type="password" placeholder="Confirm Password" value={confirmPassword} onChange={this.onChange} />
                                 </div>
                                 <div className="col-12 mt-3">
-                                    <select className="input-group p-3">
-                                        <option selected="selected" value="">Choose Country</option>
+                                    <select  className="input-group p-3">
+                                        <option defaultValue="seleced"  >Choose Country</option>
                                         <option value="AF">Afghanistan</option>
                                         <option value="AX">Åland Islands</option>
                                         <option value="AL">Albania</option>
@@ -320,38 +389,55 @@ class SignUp extends Component {
                                         <option value="ZW">Zimbabwe</option>
                                     </select>
                                 </div>
+
+                                <div className="col-12 mt-3">
+                                    <p className="text-left d-inline float-left">You Have An Account ? <Link to="/login">
+                                        <small>Sign In</small>
+                                        </Link></p>
+                                    <p className="text-right d-inline float-right"><Link to="/forgetpassword">
+                                        <small>Forget Your Password</small>
+                                        </Link></p>
+                                    <div className="clearfix"></div>
+                                </div>
+                                <div className="col-12 mt-3">
+                                    <button className="btn">Sign Up</button>
+                                </div>
+                            
                             </form>
                         </div>
+
+                        {/* student */}
                         <div className="row m-0 accSetting">
+
                             <form className="row m-0">
                                 <p className="lead col-12 text-center">Student Sign Up</p>
                                 <div className="col-sm-4 mt-3">
-                                    <input className="input-group p-3" type="text" placeholder="First Name" />
+                                    <input className="input-group p-3" type="text" placeholder="First Name" value={firstName} onChange={this.onChange}/>
                                 </div>
                                 <div className="col-sm-4 mt-3">
-                                    <input className="input-group p-3" type="text" placeholder="Middle Name" />
+                                    <input className="input-group p-3" type="text" placeholder="Middle Name" value={middleName} onChange={this.onChange}/>
                                 </div>
                                 <div className="col-sm-4 mt-3">
-                                    <input className="input-group p-3" type="text" placeholder="Last Name" />
+                                    <input className="input-group p-3" type="text" placeholder="Last Name" value={lastName} onChange={this.onChange}/>
                                 </div>
                                 <div className="col-12 mt-3">
-                                    <input className="input-group p-3" type="text" placeholder="Degree" />
+                                    <input className="input-group p-3" type="text" placeholder="Degree" value={degree} onChange={this.onChange}/>
                                 </div>
                                 <div className="col-12 mt-3">
-                                    <input className="input-group p-3" type="email" placeholder="You Email" />
+                                    <input className="input-group p-3" type="email" placeholder="You Email" value={email} onChange={this.onChange}/>
                                 </div>
                                 <div className="col-12 mt-3">
-                                    <input className="input-group p-3" type="password" placeholder="Your Password" />
+                                    <input className="input-group p-3" type="tel" placeholder="Your Phone Number" value={phone} onChange={this.onChange}/>
                                 </div>
                                 <div className="col-12 mt-3">
-                                    <input className="input-group p-3" type="password" placeholder="Confirm Password" />
+                                    <input className="input-group p-3" type="password" placeholder="Your Password" value={password} onChange={this.onChange}/>
                                 </div>
                                 <div className="col-12 mt-3">
-                                    <input className="input-group p-3" type="tel" placeholder="Your Phone Number" />
+                                    <input className="input-group p-3" type="password" placeholder="Confirm Password" value={confirmPassword} onChange={this.onChange}/>
                                 </div>
                                 <div className="col-12 mt-3">
                                     <select className="input-group p-3">
-                                        <option selected="selected" value="">Choose Country</option>
+                                        <option defaultValue="seleced">Choose Country</option>
                                         <option value="AF">Afghanistan</option>
                                         <option value="AX">Åland Islands</option>
                                         <option value="AL">Albania</option>
@@ -603,24 +689,26 @@ class SignUp extends Component {
                                         <option value="ZW">Zimbabwe</option>
                                     </select>
                                 </div>
+
+
+                                <div className="col-12 mt-3">
+                                    <p className="text-left d-inline float-left">You Have An Account ? <Link to="/login">
+                                        <small>Sign In</small>
+                                    </Link></p>
+                                    <p className="text-right d-inline float-right"><Link to="/forgetpassword">
+                                        <small>Forget Your Password</small>
+                                    </Link></p>
+                                    <div className="clearfix"></div>
+                                </div>
+                                <div className="col-12 mt-3">
+                                    <button className="btn">Sign Up</button>
+                                </div>
                             </form>
                         </div>
-                    </div>
-                    <div className="col-12 mt-3">
-                        <p className="text-left d-inline float-left">You Have An Account ? <a href="register.html">
-                            <small>Sign In</small>
-                        </a></p>
-                        <p className="text-right d-inline float-right"><a href="register.html">
-                            <small>Forget Your Password</small>
-                        </a></p>
-                        <div className="clearfix"></div>
-                    </div>
-                    <div className="col-12 mt-3">
-                        <button className="btn">Sign Up</button>
-                    </div>
                 </div>
             </div>
-        </section>
+        </div>
+    </section>
         <div className="clearfix"></div>
     </div>
 

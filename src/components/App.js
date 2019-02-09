@@ -27,9 +27,9 @@ class App extends Component {
      
          <Route exact path="/" component={Home} />
          <Route path="/login" component={Login} />
+         <Route path="/signup" component={SignUp} />
          <Route path="/about" component={About} />
          <Route path="/privacy" component={Privacy} />
-         <Route path="/signup" component={SignUp} />
          <Route path="/ARindex" component={ARindex} />
          <Route path="/s/account" component={StudentAccount} />
          <Route path="/p/account" component={ProAccount} />

@@ -11,55 +11,58 @@ class Login extends Component {
   constructor(props){
     super(props);
     
-      // this.login = this.login.bind(this);
-      // this.onChange = this.onChange.bind(this);
-    
     this.state={
 
-      inputs: {
-        Username:'',
+        username:'',
         password:'',
-
-      }
       
     };
     
   }
 
-  onChange = (name, e) => {
-    const evt = e;
-    
-    this.setState((state) => {
-      console.log(evt.target);
-      state.inputs[name] = evt.target.value;
-      return state;
+  onChange = (name ,evt) => {
+
+    this.setState({
+      
+      [name]: evt.target.value,
+      
     });
     console.log(this.state);
   }
  
  
   login =  (e) => {
-    // handel api url in promise
     
     e.preventDefault();
-    const inputs = this.state.inputs;
+    const username = this.state.username 
+    const password = this.state.password
 
-    const url = "s/login";
+    const url = "/api/s/login";
     this.setState({isSubmitting: true, error: ""});
-     Axios.post( url ,  {data :inputs} )
+     Axios.post( url ,  {data :{username,password}} )
       .then(res => {
         console.log(res);
-        // console.log(res.data);
-        // return this.props.history.push(`/${this.props.locale}/`);
       })
       .catch(() => console.log("Can’t access " + url + " response. Blocked by browser?"))     
   }
 
 
   
-  proLogin(e){
-    console.log('pro login');
-  }  
+  proLogin = (e) => {
+  
+    e.preventDefault();
+    const username = this.state.username 
+    const password = this.state.password
+
+    const url = "/api/p/login";
+    this.setState({isSubmitting: true, error: ""});
+     Axios.post( url ,  {data :{username,password}} )
+      .then(res => {
+        console.log(res);
+      })
+      .catch(() => console.log("Can’t access " + url + " response. Blocked by browser?"))     
+  }
+    
   
   // proOnChange (e){
   //   this.setState({[e.target.name]: e.target.value})
@@ -67,6 +70,8 @@ class Login extends Component {
   // }
 
     render() {
+      const username = this.state.username;
+      const password = this.state.passwors;
         return (
           
         <div>
@@ -93,11 +98,11 @@ class Login extends Component {
                           <p className="lead text-center w-100">Sign In To Student Account.</p>
 
                             <div className="col-12">
-                              <input className="input-group p-3" placeholder="Username Or Email" name="username" onChange={this.onChange.bind(this, "Username")} value={ this.state.inputs.Username } />
+                              <input className="input-group p-3" placeholder="Username Or Email" name="username" onChange={this.onChange.bind(this, 'username')} value={ username } />
                             </div>
                           
                             <div className="col-12 mt-3">
-                              <input className="input-group p-3" type="password" placeholder="Password" name="password" onChange={this.onChange.bind(this, "password")} value={ this.state.inputs.password } />
+                              <input className="input-group p-3" type="password" placeholder="Password" name="password" onChange={this.onChange.bind(this, 'password')} value={ password } />
                             </div>
 
                             <div className="col-12 mt-3">
@@ -122,10 +127,10 @@ class Login extends Component {
                      <div className="row accSetting">
                         <p className="lead text-center w-100">Sign In To Professional Account.</p>
                         <div className="col-12">
-                            <input className="input-group p-3" type="text" placeholder="Username Or Email" name="username" onChange={this.proOnChange}/>
+                            <input className="input-group p-3" type="text" placeholder="Username Or Email" name="username" onChange={this.onChange.bind(this, 'username')} value={ username }/>
                         </div>
                         <div className="col-12 mt-3">
-                            <input className="input-group p-3" type="password" placeholder="Password" name="password" onChange={this.proOnChange} />
+                            <input className="input-group p-3" type="password" placeholder="Password" name="password" onChange={this.onChange.bind(this, 'password')} value={ password } />
                         </div>
                         <div className="col-12 mt-3">
                           <p className="text-left d-inline float-left">You Dont Have An Account ? <Link to="/signup"><small>Create New Account</small></Link></p>
@@ -133,15 +138,17 @@ class Login extends Component {
                         <div className="clearfix"></div>
                         </div>
                         <div className="col-12 mt-3">
-                          <button className="btn">Login</button>
+                          <button className="btn" type="submit">Login</button>
                         </div>
                     </div>
                   </form>
 
-              </div>
+         
+                 </div>
               </div>
             </div>
           </section>
+         
           <div className="clearfix"></div>
     </div>
         
